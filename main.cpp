@@ -14,14 +14,14 @@ public:
 
 private:
 	std::vector<Segment*> vec;
-	uint8_t segmentNum = 15;
+	uint8_t segmentNum = 10;
 	olc::vi2d LastMousePos = { 0,0 };
 
 protected:
 	bool OnUserCreate() override {
-		vec.push_back(new Segment({ ScreenWidth() >> 1, ScreenHeight() >> 1 }, 20, 0));
+		vec.push_back(new Segment({ ScreenWidth() >> 1, ScreenHeight() >> 1 }, 40, 0));
 		for (uint8_t i = 1; i < segmentNum; i++)
-			vec.push_back(new Segment(vec.back(), 12, 0));
+			vec.push_back(new Segment(vec.back(), 40, 0));
 
 		return true;
 	}
@@ -37,7 +37,7 @@ protected:
 		
 		vec.back()->Draw(this);
 
-		Sleep(30);
+		Sleep(50);
 		
 		//std::cout << a->angle << '\n';
 		return true;
